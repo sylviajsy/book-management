@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import bookRoutes from './routes/bookRoutes.js';
+import dbRoutes from './routes/dbRoutes.js';
 
 const app = express();
 
@@ -9,24 +10,16 @@ const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
-// Using bodyParser
-app.use(express.urlencoded({ extended: true }));
 
-// Mount the book routes
+// Mount the book routes (JSON)
 // Any request starting with '/books' will be handled by bookRoutes
 app.use('/books', bookRoutes);
 
-// Pool manages postgreSQL clients
-const { Pool } = require('pg');
-const pool = new Pool({
-    user: 'nelson',
-    host: 'localhost',
-    database: 'bookManagement',
-    password: '',
-    port: 5432,
-})
+app.use('/dbBooks', dbRoutes);
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
+  console.log(`JSON API: http://localhost:${PORT}/books`);
+  console.log(`DB   API: http://localhost:${PORT}/dbBooks`);
 });
