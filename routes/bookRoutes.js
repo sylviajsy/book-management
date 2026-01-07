@@ -35,8 +35,23 @@ bookRoutes.post('/', (req, res) =>{
     }
 
     books.push(newBook);
-    res.json(books);
+    res.json({ message: 'Book added successfully', book: newBook });
 }
 );
+
+// Update a book
+bookRoutes.put('/:isbn', (req, res) => {
+    const isbn = req.params.isbn;
+    const updates = req.body;
+
+    const index = books.findIndex(b => b.isbn === isbn);
+
+    if (index === -1){
+        return res.status(404).json({ error: 'Book not found'})
+    }
+
+    books[index] = { ...books[index], ...updates };
+    res.json({ message: 'Book updated successfully', book: books[index] });
+})
 
 export default bookRoutes;
