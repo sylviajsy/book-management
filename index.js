@@ -8,6 +8,7 @@ const app = express();
 // Set the port that you want the server to run on
 const PORT = process.env.PORT || 8080;
 
+// For client/Interface
 app.use(cors());
 app.use(express.json());
 
