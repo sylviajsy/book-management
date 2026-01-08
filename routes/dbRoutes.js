@@ -71,4 +71,21 @@ dbRoutes.put('/:isbn', async (req, res) => {
     }
 })
 
+// Delete a book
+dbRoutes.delete('/:isbn', async (req, res) => {
+    try {
+        const { isbn } = req.params;
+        const deleteBookTable = await db.query(`DELETE FROM books WHERE isbn = $1 RETURNING *`, [isbn]);
+
+        if (deleteBookTable.rows.length === 0) {
+            return res.status(404).json({ message: "Book not found" });
+        }
+
+        res.json(deleteBookTable.rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
+})
+
 export default dbRoutes;
