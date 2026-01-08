@@ -20,7 +20,7 @@ const dataSeed = async () => {
             ]
 
             await db.query(query, VALUES);
-            console.log(`${book.title} Loaded`);
+            console.log('${book.title} Loaded');
         }
 
         console.log('All books have been loaded');
