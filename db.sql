@@ -12,4 +12,5 @@ CREATE TABLE books (
 
 );
 
+-- Define schema
 -- Insert is handled in db/dataSeed.js
