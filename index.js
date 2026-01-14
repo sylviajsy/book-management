@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import bookRoutes from './routes/bookRoutes.js';
+// import bookRoutes from './routes/bookRoutes.js';
 import dbRoutes from './routes/dbRoutes.js';
 
 const app = express();
@@ -14,9 +14,9 @@ app.use(express.json());
 
 // Mount the book routes (JSON)
 // Any request starting with '/books' will be handled by bookRoutes
-app.use('/books', bookRoutes);
+// app.use('/books', bookRoutes);
 
-app.use('/dbBooks', dbRoutes);
+app.use('/Books', dbRoutes);
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
