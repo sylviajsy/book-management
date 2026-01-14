@@ -16,11 +16,10 @@ app.use(express.json());
 // Any request starting with '/books' will be handled by bookRoutes
 // app.use('/books', bookRoutes);
 
-app.use('/Books', dbRoutes);
+app.use('/dbBooks', dbRoutes);
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
-  console.log(`JSON API: http://localhost:${PORT}/books`);
   console.log(`DB   API: http://localhost:${PORT}/dbBooks`);
 });
