@@ -5,7 +5,7 @@ import './App.css'
 const API_URL = 'http://localhost:8080/dbBooks';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [books, setBooks] = useState([]);
 
   const fetchBooks = async () => {
     try {
