@@ -1,5 +1,5 @@
-import db from './db/index.js';
-import books from './data/books.js';
+import db from './server/db/index.js';
+import books from './server/data/books.js';
 
 const dataSeed = async () => {
     try {
