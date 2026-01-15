@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios';
 import './App.css'
 
@@ -10,14 +10,21 @@ function App() {
   const fetchBooks = async () => {
     try {
       const response = await axios.get(API_URL);
-
+      console.log("Data Received:", response.data);
+      
     } catch (error) {
       console.error("error:", error);
     }
   }
 
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
   return (
-    
+    <div>
+      <h1>Book Management</h1>
+    </div>
   )
 }
 
