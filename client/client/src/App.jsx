@@ -28,6 +28,7 @@ function App() {
        <div key={book.isbn}>
         <h3>{book.title}</h3>
         <p>{book.author}</p>
+        <p>{book.format}</p>
       </div>
       )}
     </div>
