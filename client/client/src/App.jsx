@@ -11,7 +11,7 @@ function App() {
     try {
       const response = await axios.get(API_URL);
       console.log("Data Received:", response.data);
-      
+      setBooks(response.data);
     } catch (error) {
       console.error("error:", error);
     }
