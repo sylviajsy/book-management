@@ -8,3 +8,11 @@ A back-end web application for managing a personal library inventory. This proje
 - Create the database: `createdb bookManagement`
 - Log into DB:`psql bookManagement`
 - Create tables: `psql bookManagement < db.sql`
+3. Create a `.env` file in the root directory
+  `DB_USER=your_user_name
+  DB_HOST=127.0.0.1
+  DB_DBNAME=bookManagement
+  DB_PASSWORD=
+  DB_PORT=5432
+  PORT=8080`
+
