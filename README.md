@@ -15,4 +15,5 @@ A back-end web application for managing a personal library inventory. This proje
   DB_PASSWORD=
   DB_PORT=5432
   PORT=8080`
-
+4. Importing JSON data to DB: `node dataSeed.js`
+5. Start the server: `npm run server`
